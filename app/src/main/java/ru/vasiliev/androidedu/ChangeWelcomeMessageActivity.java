@@ -25,10 +25,13 @@ public class ChangeWelcomeMessageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_welcome_message);
+        // Начальный результат - CANCELLED - если юзер не введет новое приветственное сообщение
+        // и закрое это активти.
         setResult(Activity.RESULT_CANCELED);
         initView();
     }
 
+    // Инициализируем View
     private void initView() {
         welcomeMsgEdit = findViewById(R.id.welcome_message_edit);
         saveMsgButton = findViewById(R.id.save_welcome_message_button);
@@ -39,10 +42,15 @@ public class ChangeWelcomeMessageActivity extends AppCompatActivity {
                     Toast.makeText(ChangeWelcomeMessageActivity.this, "Введите сообщение!",
                             Toast.LENGTH_SHORT).show();
                 } else {
+                    // Если введенные данные валидны (!=null и текст не пустой)
+                    // Создаем Intent для возврата результата и кладем в него новую строку
+                    // приветствия
                     Intent resultIntent = new Intent();
                     resultIntent.putExtra(RESULT_EXTRA_WELCOME_MESSAGE,
                             welcomeMsgEdit.getText().toString());
+                    // Задаем result code = OK
                     setResult(Activity.RESULT_OK, resultIntent);
+                    // Закрываем активити
                     finish();
                 }
             }
