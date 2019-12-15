@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import ru.vasiliev.androidedu.samples.activityresult.WelcomeActivity;
+import ru.vasiliev.androidedu.samples.apirequest.ApiRequestActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, WelcomeActivity.class));
+            }
+        });
+
+        Button apiRequestButton = findViewById(R.id.button_api_request_sample);
+        apiRequestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ApiRequestActivity.class));
             }
         });
     }
