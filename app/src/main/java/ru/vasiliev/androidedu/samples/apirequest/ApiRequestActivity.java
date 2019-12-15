@@ -19,9 +19,9 @@ import ru.vasiliev.androidedu.R;
 
 public class ApiRequestActivity extends AppCompatActivity {
 
-    private Button mMakeApiRequestButton;
+    private Button makeApiRequestButton;
 
-    private TextView mResponseText;
+    private TextView responseText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +31,9 @@ public class ApiRequestActivity extends AppCompatActivity {
     }
 
     void initView() {
-        mMakeApiRequestButton = findViewById(R.id.button_make_request);
-        mResponseText = findViewById(R.id.api_response_text);
-        mMakeApiRequestButton.setOnClickListener(new View.OnClickListener() {
+        makeApiRequestButton = findViewById(R.id.button_make_request);
+        responseText = findViewById(R.id.api_response_text);
+        makeApiRequestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 makeApiRequest();
@@ -57,15 +57,15 @@ public class ApiRequestActivity extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                mResponseText.setText(e.getMessage());
+                responseText.setText(e.getMessage());
             }
 
             @Override
             public void onResponse(Call call, final Response response) throws IOException {
                 if (!response.isSuccessful()) {
-                    mResponseText.setText("Unexpected code " + response);
+                    responseText.setText("Unexpected code " + response);
                 } else {
-                    mResponseText.setText(new String(response.body().bytes()));
+                    responseText.setText(new String(response.body().bytes()));
                 }
             }
         });
