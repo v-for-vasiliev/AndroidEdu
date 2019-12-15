@@ -1,4 +1,4 @@
-package ru.vasiliev.androidedu;
+package ru.vasiliev.androidedu.samples.activityresult;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import ru.vasiliev.androidedu.R;
 
 public class ChangeWelcomeMessageActivity extends AppCompatActivity {
 

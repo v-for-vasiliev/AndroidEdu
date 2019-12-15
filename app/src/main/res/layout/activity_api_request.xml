@@ -5,22 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".samples.apirequest.ApiRequestActivity">
 
     <Button
-        android:id="@+id/button_welcome_sample"
+        android:id="@+id/button_make_request"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start activity for result sample"
+        android:text="Make API http request"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_api_request_sample"
+    <TextView
+        android:id="@+id/api_response_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="API request sample"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:gravity="start|top"
+        android:text="Response will be here"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_welcome_sample" />
+        app:layout_constraintTop_toBottomOf="@id/button_make_request" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
